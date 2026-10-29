@@ -23,7 +23,7 @@ public class BookController {
     }
 
     @GetMapping("/{isbn}")
-    public Optional<Book> getBook(@PathVariable("isbn") String isbn) {
+    public Optional<Book> getBook(@PathVariable("isbn") long isbn) {
         return bookRepository.findById(isbn);
     }
 
@@ -33,7 +33,7 @@ public class BookController {
     }
 
     @DeleteMapping("/{isbn}")
-    public void deleteBook(@PathVariable("isbn") String isbn) {
+    public void deleteBook(@PathVariable("isbn") long isbn) {
         bookRepository.deleteById(isbn);
     }
 }

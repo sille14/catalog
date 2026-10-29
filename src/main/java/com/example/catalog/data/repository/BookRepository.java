@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import java.util.List;
 import java.util.Locale;
 
-public interface BookRepository extends JpaRepository<Book, String>, JpaSpecificationExecutor<Book> {
+public interface BookRepository extends JpaRepository<Book, Long>, JpaSpecificationExecutor<Book> {
 
     default List<Book> search(String query) {
         if (query == null || query.isBlank()) {
